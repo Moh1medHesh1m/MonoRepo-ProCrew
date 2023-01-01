@@ -1,0 +1,12 @@
+FROM node:14-alpine
+RUN mkdir -p /svr/app
+WORKDIR /svr/app
+RUN npm i -g @nestjs/cli --silent
+RUN npm i bcrypt
+COPY package.json .
+COPY package-lock.json .
+RUN npm install --silent & npm install node-gyp -g & npm install bcrypt -g & npm install bcrypt --save
+COPY . .
+# Value set in .env file.
+EXPOSE 8000
+CMD ["npm", "run", "start:dev"]

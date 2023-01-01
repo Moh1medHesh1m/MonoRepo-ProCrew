@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./project-procrew
+      dockerfile: Dockerfile.local
+    restart: always
+    # env_file: .env
+    volumes:
+      - ./project-procrew:/svr/app
+      - "./scripts/wait.sh:/wait.sh"
+      - /svr/app/node_modules
+    networks:
+      - bp-network
+    ports:
+      - "8000:8000"
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./Front-end-pro-crew
+      dockerfile: Dockerfile.local
+    restart: always
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./Front-end-pro-crew/src:/usr/src/app/src"
+    networks:
+      - bp-network
+    command: "npm run start"
+
+networks:
+  bp-network:
+    driver: bridge
