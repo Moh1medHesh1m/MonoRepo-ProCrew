@@ -1,7 +1,7 @@
 import { stat } from 'fs/promises';
 import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
-import config from '../../../config';
+import config from '../config';
 
 
 function RestaurantHistory() {

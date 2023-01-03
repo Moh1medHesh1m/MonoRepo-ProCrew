@@ -1,7 +1,7 @@
 
 import React, { SyntheticEvent, useContext, useState } from 'react'
 import { Alert, Table } from 'react-bootstrap'
-import config from '../../../config';
+import config from '../config';
 import { CartContext } from '../context/cartContext'
 
 // ===========================================================================

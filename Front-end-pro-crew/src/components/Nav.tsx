@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import config from '../../../config';
+import config from '../config';
 
 const Nav = (props: { name: string, setName: (name: string) => void }) => {
     const logout = async () => {

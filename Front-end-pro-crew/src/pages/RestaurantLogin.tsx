@@ -1,6 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Navigate,Link} from 'react-router-dom';
-import config from '../../../config';
+import config from '../config';
 
 function RestaurantLogin (props: { setName: (name: string) => void }) {
   

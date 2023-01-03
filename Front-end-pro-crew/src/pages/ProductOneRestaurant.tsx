@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-import config from '../../../config';
+import config from '../config';
 import Nav from '../components/Nav';
 import { CartContext } from '../context/cartContext';
 import Shop from './Shop';

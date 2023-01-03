@@ -1,6 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Navigate} from 'react-router-dom';
-import config from '../../../config';
+import config from '../config';
 
 const CreateProduct = () => {
     const [title, setTitle] = useState('');

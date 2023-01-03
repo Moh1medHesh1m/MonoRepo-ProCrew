@@ -14,7 +14,7 @@ import { CartContext } from './context/cartContext';
 import Shop from './pages/Shop';
 import OrderHistory from './pages/OrderHistory';
 import RestaurantHistory from './pages/RestaurantHistory';
-import config from '../../config'
+import config from './config'
 function App() {
     const [name, setName] = useState('');
     const [resName, setResName] = useState('')

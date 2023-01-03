@@ -1,8 +1,7 @@
 import React, {SyntheticEvent, useState} from 'react';
 import { Button } from 'react-bootstrap';
 import {Link, Navigate } from "react-router-dom";
-import axios from 'axios'
-import config from '../../../config';
+import config from '../config';
 const Login = (props: { setName: (name: string) => void }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');

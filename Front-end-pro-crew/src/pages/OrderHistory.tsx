@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Row } from 'react-bootstrap';
-import config from '../../../config';
+import config from '../config';
 
 function OrderHistory() {
     const [orders,setOrders]= useState([]as any)

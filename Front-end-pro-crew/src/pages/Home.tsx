@@ -6,7 +6,7 @@ import { Prev } from 'react-bootstrap/esm/PageItem';
 import { Link } from 'react-router-dom';
 import Carosel from '../components/Carosel';
 import Nav from '../components/Nav'
-import config from '../../../config'
+import config from '../config'
 
 
 const Home = (props: { name: string }) => {
