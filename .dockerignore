@@ -1,7 +1,8 @@
 Front-end-pro-crew/node_modules
-project-procrew/node_modules
+Back-end-pro-crew/node_modules
 .gitignore
 .git
 *.md 
 Dockerfile.*
-project-procrew/dist
+Back-end-pro-crew/dist
+
