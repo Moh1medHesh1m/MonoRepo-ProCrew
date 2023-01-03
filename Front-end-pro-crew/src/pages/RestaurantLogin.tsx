@@ -1,5 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Navigate,Link} from 'react-router-dom';
+import config from '../../../config';
 
 function RestaurantLogin (props: { setName: (name: string) => void }) {
   
@@ -10,7 +11,7 @@ function RestaurantLogin (props: { setName: (name: string) => void }) {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:8000/restaurant/login', {
+        const response = await fetch(`${config.backendApi}/restaurant/login`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',

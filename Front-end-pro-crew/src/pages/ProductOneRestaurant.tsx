@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import config from '../../../config';
 import Nav from '../components/Nav';
 import { CartContext } from '../context/cartContext';
 import Shop from './Shop';
@@ -20,7 +21,7 @@ function RestaurantHome() {
   useEffect(() => {
     (
       async () => {
-        const response = await fetch(`http://localhost:8000/product/${from}`, {
+        const response = await fetch(`${config.backendApi}/product/${from}`, {
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
 
@@ -50,7 +51,7 @@ function RestaurantHome() {
   useEffect(() => {
     (
       async () => {
-        const response = await fetch('http://localhost:8000/api/user', {
+        const response = await fetch(`${config.backendApi}/api/user`, {
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
         });

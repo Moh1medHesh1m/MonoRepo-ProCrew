@@ -1,10 +1,12 @@
 
+
 import React, { useEffect, useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Prev } from 'react-bootstrap/esm/PageItem';
 import { Link } from 'react-router-dom';
 import Carosel from '../components/Carosel';
 import Nav from '../components/Nav'
+import config from '../../../config'
 
 
 const Home = (props: { name: string }) => {
@@ -31,7 +33,7 @@ const Home = (props: { name: string }) => {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch(`http://localhost:8000/restaurant/all/${page}`, {
+                const response = await fetch(`${config.backendApi}/restaurant/all/${page}`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });
@@ -60,7 +62,7 @@ const Home = (props: { name: string }) => {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/api/user', {
+                const response = await fetch(`${config.backendApi}/api/user`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });
@@ -78,7 +80,7 @@ const Home = (props: { name: string }) => {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch(`http://localhost:8000/restaurant/search/${searchItem}`, {
+                const response = await fetch(`${config.backendApi}/restaurant/search/${searchItem}`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });

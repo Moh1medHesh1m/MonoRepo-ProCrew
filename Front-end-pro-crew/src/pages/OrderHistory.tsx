@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Row } from 'react-bootstrap';
+import config from '../../../config';
 
 function OrderHistory() {
     const [orders,setOrders]= useState([]as any)
@@ -8,7 +9,7 @@ function OrderHistory() {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/order/', {
+                const response = await fetch(`${config.backendApi}/order/`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });

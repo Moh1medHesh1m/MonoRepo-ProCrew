@@ -2,6 +2,7 @@ import React, { useState,useEffect} from 'react';
 
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import config from '../../../config';
 import Nav from '../components/Nav';
 import NavRes from '../components/NavRes';
 function RestaurantHome() {
@@ -12,7 +13,7 @@ const [item, setItem] = useState([]as any)
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/restaurant', {
+                const response = await fetch(`${config.backendApi}:8000/restaurant`, {
                     headers: {'Content-Type': 'application/json'},
                     credentials: 'include',
                 });
@@ -27,7 +28,7 @@ const [item, setItem] = useState([]as any)
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/product', {
+                const response = await fetch(`${config.backendApi}/product`, {
                     headers: {'Content-Type': 'application/json'},
                     credentials: 'include',
                    
@@ -59,7 +60,7 @@ const [item, setItem] = useState([]as any)
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: 'React Hooks PUT Request Example' })
         };
-        const response = await fetch(`http://localhost:8000/product/${id}`, requestOptions);
+        const response = await fetch(`${config.backendApi}/product/${id}`, requestOptions);
         const data = await response.json();
         window.location.reload();
 

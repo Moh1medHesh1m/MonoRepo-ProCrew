@@ -1,6 +1,7 @@
 
 import React, { SyntheticEvent, useContext, useState } from 'react'
 import { Alert, Table } from 'react-bootstrap'
+import config from '../../../config';
 import { CartContext } from '../context/cartContext'
 
 // ===========================================================================
@@ -28,7 +29,7 @@ function Shop() {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    const response = await fetch('http://localhost:8000/order', {
+    const response = await fetch(`${config.backendApi}/order`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',

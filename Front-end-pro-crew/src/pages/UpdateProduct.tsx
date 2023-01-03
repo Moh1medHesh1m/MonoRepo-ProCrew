@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import config from '../../../config';
 
 const UpdateProduct = () => {
     const [title, setTitle] = useState('');
@@ -11,7 +12,7 @@ const UpdateProduct = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch(`http://localhost:8000/product/${from}`, {
+        await fetch(`${config.backendApi}/product/${from}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',

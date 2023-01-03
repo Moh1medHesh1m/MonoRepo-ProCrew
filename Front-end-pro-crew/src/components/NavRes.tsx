@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom";
+import config from "../../../config";
 
 const NavRes = (props: { name: string, setName: (name: string) => void }) => {
     const logout = async () => {
-        await fetch('http://localhost:8000/restaurant/logout', {
+        await fetch(`${config.backendApi}/restaurant/logout`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',

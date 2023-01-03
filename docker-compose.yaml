@@ -3,7 +3,7 @@ services:
   backend:
     container_name: backend
     build:
-      context: ./project-procrew
+      context: ./Back-end-pro-crew/
       dockerfile: Dockerfile.local
     restart: always
     # env_file: .env

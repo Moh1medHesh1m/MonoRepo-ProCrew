@@ -1,6 +1,7 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Navigate} from 'react-router-dom';
 import axios from 'axios'
+import config from '../../../config';
 
 function Restaurant() {
     const [name, setName] = useState('');
@@ -11,7 +12,7 @@ function Restaurant() {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch('http://localhost:8000/restaurant', {
+        await fetch(`${config.backendApi}/restaurant`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

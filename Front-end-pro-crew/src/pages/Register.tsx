@@ -1,5 +1,6 @@
 import React, {SyntheticEvent, useState} from 'react';
 import {Navigate} from 'react-router-dom';
+import config from '../../../config';
 
 const Register = () => {
     const [username, setName] = useState('');
@@ -9,7 +10,7 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch('http://localhost:8000/api/signup', {
+        await fetch(`${config.backendApi}/api/signup`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

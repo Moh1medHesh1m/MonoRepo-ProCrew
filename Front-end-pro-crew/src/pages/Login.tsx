@@ -2,6 +2,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import { Button } from 'react-bootstrap';
 import {Link, Navigate } from "react-router-dom";
 import axios from 'axios'
+import config from '../../../config';
 const Login = (props: { setName: (name: string) => void }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -10,7 +11,7 @@ const Login = (props: { setName: (name: string) => void }) => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        const response = await fetch('http://localhost:8000/api/login', {
+        const response = await fetch(`${config.backendApi}/api/login`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             credentials: 'include',

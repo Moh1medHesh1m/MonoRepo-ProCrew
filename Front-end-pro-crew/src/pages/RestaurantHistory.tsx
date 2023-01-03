@@ -1,6 +1,7 @@
 import { stat } from 'fs/promises';
 import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
+import config from '../../../config';
 
 
 function RestaurantHistory() {
@@ -9,7 +10,7 @@ function RestaurantHistory() {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/order/restaurant', {
+                const response = await fetch(`${config.backendApi}/order/restaurant`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });
@@ -60,7 +61,7 @@ function RestaurantHistory() {
             console.log(state+"Nooo")
         }
        
-        await fetch(`http://localhost:8000/order/${element}`, {
+        await fetch(`${config.backendApi}/order/${element}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',

@@ -14,6 +14,7 @@ import { CartContext } from './context/cartContext';
 import Shop from './pages/Shop';
 import OrderHistory from './pages/OrderHistory';
 import RestaurantHistory from './pages/RestaurantHistory';
+import config from '../../config'
 function App() {
     const [name, setName] = useState('');
     const [resName, setResName] = useState('')
@@ -21,12 +22,13 @@ function App() {
     const [price, setPrice] = useState(0 as number)
     const [resId, setResId] = useState(0 as number)
     const [list, setList] = useState([] as any)
+    
 
 
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/api/user', {
+                const response = await fetch(`${config.backendApi}/api/user`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });
@@ -43,7 +45,7 @@ function App() {
     useEffect(() => {
         (
             async () => {
-                const response = await fetch('http://localhost:8000/restaurant', {
+                const response = await fetch(`${config.backendApi}/restaurant`, {
                     headers: { 'Content-Type': 'application/json' },
                     credentials: 'include',
                 });
