@@ -8,7 +8,7 @@ services:
     restart: always
     # env_file: .env
     volumes:
-      - ./project-procrew:/svr/app
+      - ./Back-end-pro-crew:/svr/app
       - "./scripts/wait.sh:/wait.sh"
       - /svr/app/node_modules
     networks:
